@@ -1,6 +1,6 @@
 export class Quote {
-  id: number;
-  quote: string;
-  quoteAuthor: string;
-  submittedBy: string;
+  id!: number;
+  quoteMessage!: string;
+  quoteAuthor!: string;
+  submittedBy!: string;
 }

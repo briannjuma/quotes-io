@@ -80,6 +80,31 @@
       <p class="alert alert-danger">Name is required</p>
     </div>
   </div>
+  <!--Date Added-->
+  <div class="row m-2">
+    <label
+      style="font-size: larger"
+      class="col-sm-2 col-form-label col-form-label-lg"
+      for="date"
+      >Date Created</label
+    >
+    <div class="col-sm-10">
+      <input
+        class="form-control datepicker"
+        data-date-format="mm/dd/yyyy"
+        type="date"
+        id="date"
+        required
+        name="date"
+        [(ngModel)]="newQuote.completeDate"
+        #date="ngModel"
+      />
+    </div>
+    <div *ngIf="date.touched && !date.valid">
+      <p class="alert alert-danger">Name is required</p>
+    </div>
+  </div>
+
   <!-- Submit button-->
   <div class="d-grid gap-2 col-6 mx-auto">
     <button

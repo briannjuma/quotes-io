@@ -12,6 +12,7 @@ export class Quote {
     public submittedBy: string,
     public upVote: number,
     public downVote: number,
-    public isMostLiked: boolean
+    public isMostLiked: boolean,
+    public completeDate: Date
   ) {}
 }

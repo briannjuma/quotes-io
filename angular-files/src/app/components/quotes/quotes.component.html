@@ -15,6 +15,10 @@
         </p>
         <footer class="blockquote-footer">
           <cite> Author ~ {{ quote.quoteAuthor }} </cite>
+          <p class="text-end">
+            {{ quote.completeDate | date }}
+            <span>{{ quote.completeDate }} ago)</span>
+          </p>
         </footer>
       </blockquote>
       <div>

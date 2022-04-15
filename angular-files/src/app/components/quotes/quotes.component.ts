@@ -15,7 +15,8 @@ export class QuotesComponent implements OnInit {
       'Brian Juma',
       0,
       0,
-      false
+      false,
+      new Date()
     ),
     new Quote(
       4,
@@ -24,7 +25,8 @@ export class QuotesComponent implements OnInit {
       'Brian Juma',
       0,
       0,
-      false
+      false,
+      new Date()
     ),
     new Quote(
       2,
@@ -33,7 +35,8 @@ export class QuotesComponent implements OnInit {
       'Brian Juma',
       0,
       0,
-      false
+      false,
+      new Date()
     ),
     new Quote(
       5,
@@ -42,7 +45,8 @@ export class QuotesComponent implements OnInit {
       'Brian Juma',
       0,
       0,
-      false
+      false,
+      new Date()
     ),
   ];
 
@@ -89,6 +93,7 @@ export class QuotesComponent implements OnInit {
   addNewQuote(quote: any) {
     let quotelength = this.quotes.length;
     quote.id = quotelength + 1;
+    quote.completeDate = new Date(quote.completeDate);
     this.quotes.push(quote);
   }
 

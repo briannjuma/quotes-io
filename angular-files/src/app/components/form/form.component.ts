@@ -7,8 +7,7 @@ import { Quote } from 'src/app/model/quote';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  
-  newQuote = new Quote(0, '', '', '', 0, 0, false);
+  newQuote = new Quote(0, '', '', '', 0, 0, false, new Date());
   @Output() addQuote = new EventEmitter<Quote>();
 
   submitQuote() {
@@ -16,7 +15,7 @@ export class FormComponent implements OnInit {
 
     //reset new quote
 
-    this.newQuote = new Quote(0, ' ', ' ', ' ', 0, 0, false);
+    this.newQuote = new Quote(0, ' ', ' ', ' ', 0, 0, false, new Date());
   }
 
   constructor() {}

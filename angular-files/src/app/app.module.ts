@@ -7,6 +7,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuotesComponent } from './components/quotes/quotes.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { MostLikedDirective } from './directives/most-liked.directive';
+import { FormComponent } from './components/form/form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,9 @@ import { MostLikedDirective } from './directives/most-liked.directive';
     QuotesComponent,
     ButtonsComponent,
     MostLikedDirective,
+    FormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

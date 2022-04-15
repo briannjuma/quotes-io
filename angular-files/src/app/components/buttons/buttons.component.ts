@@ -8,12 +8,8 @@ import { Quote } from 'src/app/model/quote';
 })
 export class ButtonsComponent implements OnInit {
   @Input() 'quote': Quote;
-  @Output() isComplete = new EventEmitter<boolean>();
 
-  quoteDelete(complete: boolean) {
-    this.isComplete.emit(complete);
-  }
-
+  // Votes Logic
   @Output() isUpVote = new EventEmitter<boolean>();
   @Output() isDownVote = new EventEmitter<boolean>();
 
@@ -23,6 +19,15 @@ export class ButtonsComponent implements OnInit {
   downVote(dislike: boolean) {
     this.isDownVote.emit(dislike);
   }
+
+// delete Logic
+  @Output() isComplete = new EventEmitter<boolean>();
+
+  quoteDelete(complete: boolean) {
+    this.isComplete.emit(complete);
+  }
+
+  
   constructor() {}
 
   ngOnInit(): void {}

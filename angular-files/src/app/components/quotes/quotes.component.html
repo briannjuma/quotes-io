@@ -1,21 +1,21 @@
 <div class="container">
-  <div class="card m-2" *ngFor="let quote of quotes; let i = index">
+  <div
+    class="card m-2"
+    *ngFor="let quote of quotes; let i = index"
+    appMostLiked
+    [ngClass]="{ highlight: quote.isMostLiked }"
+  >
     <div class="card-header text-end">
       Submitted by: {{ quote.submittedBy }}
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <h4
-          appMostLiked
-          [ngClass]="{ highlight: quote.isMostLiked }"
-        >
-          <p>
-            {{ quote.quoteMessage }}
-          </p>
-          <footer class="blockquote-footer">
-            <cite> Author ~ {{ quote.quoteAuthor }} </cite>
-          </footer>
-        </h4>
+        <p>
+          {{ quote.quoteMessage }}
+        </p>
+        <footer class="blockquote-footer">
+          <cite> Author ~ {{ quote.quoteAuthor }} </cite>
+        </footer>
       </blockquote>
       <div>
         <app-buttons

@@ -10,10 +10,18 @@
           <cite> Author ~ {{ quote.quoteAuthor }} </cite>
         </footer>
       </blockquote>
-      <div *nglf="quote.buttons">
+      <div>
+        <app-buttons
+          [quote]="quote"
+          (isUpVote)="upVote($event, i)"
+          (isDownVote)="downVote($event, i)"
+        >
+        </app-buttons>
+      </div>
+      <!-- <div *nglf="quote.buttons">
         [quote]="quote" (isComplete)="deleteQuote($event, i)"
         (isUpVote)="upVote($event,i)" (isDownVote)="downVote($event, i)"
-      </div>
+      </div>-->
     </div>
   </div>
 </div>

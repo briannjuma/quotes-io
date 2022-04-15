@@ -2,25 +2,21 @@
   Posted on {{ quote.completeDate | date }}
   <span>Time passed {{ quote.completeDate }}</span> dateCount pipe
 </p> -->
-<div class="container">
-  <button
-    (click)="upVote(true)"
-    id="upvote"
-    class="btn btn-outline-success btn-sm"
-    style="margin-right: 1%"
-  >
-    {{ quote.upVote }} Upvotes
-  </button>
-  <button
-    (click)="downVote(true)"
-    id="dvote"
-    class="btn btn-outline-info btn-sm"
-  >
-    {{ quote.downVote }} Downvotes
-  </button>
-</div>
-<div class="container">
-  <button (click)="quoteDelete(true)" class="btn btn-danger btn-sm">
-    Delete Quote
-  </button>
+
+<div class="container m-2 d-flex justify-content-around">
+  <div>
+    <button (click)="upVote(true)" id="upvote" class="btn bg-primary btn-sm">
+      {{ quote.upVote }} Upvotes
+    </button>
+  </div>
+  <div>
+    <button (click)="downVote(true)" id="dvote" class="btn bg-info btn-sm">
+      {{ quote.downVote }} Downvotes
+    </button>
+  </div>
+  <div>
+    <button (click)="quoteDelete(true)" class="btn btn-danger btn-sm">
+      Delete Quote
+    </button>
+  </div>
 </div>

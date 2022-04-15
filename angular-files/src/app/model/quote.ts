@@ -11,7 +11,6 @@ export class Quote {
     public quoteAuthor: string,
     public submittedBy: string,
     public upVote: number,
-    public downVote: number,
-    public completeDate: Date
-  );
+    public downVote: number
+  ) {}
 }

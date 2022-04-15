@@ -7,17 +7,59 @@ import { Quote } from 'src/app/model/quote';
   styleUrls: ['./quotes.component.css'],
 })
 export class QuotesComponent implements OnInit {
-
   quotes: Quote[] = [
-    new Quote(1, 'Grit, determination, the right amount of crazy, self belief - everything it takes to be a champion. I have that.', 'Dustin Poirier', 'Linet', new Date(2019,9,14),0 , 0,false),
-    new Quote(2,'Find something you are passionate about and keep tremendously interested in it.','Julia Child','Jesse',new Date(2019,6,9),0 , 0,false),
-    new Quote(3,'You must be the change you wish to see in the world.','Mahatma Gandhi','Anyango',new Date(2019,1,12),0 , 0,false),
-    new Quote(4,'It is very easy to forgive others their mistakes; it takes more grit and gumption to forgive them for having witnessed your own.','Jessamyn West','Samwel',new Date(2019,11,18),0 , 0,false),
-    new Quote(5,'Always be yourself, express yourself, have faith in yourself, do not go out and look for a successful personality and duplicate it.','Bruce Lee','Stacy', new Date(2019,2,14),0 , 0,false),
+    new Quote(
+      1,
+      'Do not worry much for not being cool, life is abouth warmth ',
+      'Hasnai Nalle',
+      'Brian Juma',
+      0,
+      0
+    ),
+    new Quote(
+      2,
+      'And if you think tough men are dangerous, wait until you see what weak men are capable of.',
+      'Jordan Peterson',
+      'Brian Juma',
+      0,
+      0
+    ),
+    new Quote(
+      3,
+      'If you were not such a moron you would realize this isnt our book. You should try the diet regardless, it might help with the obvious brain fog you are experiencing',
+      'Mikhaila Peterson',
+      'Brian Juma',
+      0,
+      0
+    ),
+    new Quote(
+      4,
+      'If you do not say what you think then you kill your unborn self.',
+      'Jordan Peterson',
+      'Brian Juma',
+      0,
+      0
+    ),
+    new Quote(
+      5,
+      'You can only find out what you actually believe (rather than what you think you believe) by watching how you act. You simply don’t know what you believe, before that. You are too complex to understand yourself.',
+      'Jordan Peterson',
+      'Brian Juma',
+      0,
+      0
+    ),
   ];
 
-  constructor() {
+  // votes
+  upVote(isUpVote: any, index: any) {
+    this.quotes[index].upVote++;
+    //  this.loveQuote()
   }
+  downVote(isDownVote: any, index: any) {
+    this.quotes[index].downVote++;
+  }
+
+  constructor() {}
 
   ngOnInit(): void {}
 }

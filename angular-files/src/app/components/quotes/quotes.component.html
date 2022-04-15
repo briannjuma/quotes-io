@@ -1,24 +1,19 @@
-<div class="container">
-  <div class="card m-1" *ngFor="let quote of quotes; let i = index">
-    <div class="card-header text-end">Submitted by: {{quote.submittedBy}}</div>
+<div class="container" appHighlight [ngClass]="{}">
+  <div class="card m-2" *ngFor="let quote of quotes; let i = index">
+    <div class="card-header text-end">
+      Submitted by: {{ quote.submittedBy }}
+    </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>{{quote.quoteMessage}}</p>
+        <p>{{ quote.quoteMessage }}</p>
         <footer class="blockquote-footer">
-          <cite>
-              Author ~ {{quote.quoteAuthor}}
-          </cite>
+          <cite> Author ~ {{ quote.quoteAuthor }} </cite>
         </footer>
       </blockquote>
       <div *nglf="quote.buttons">
-        
-        [quote]="quote"
-        (isComplete)="deleteQuote($event, i)"
-        (isUpVote)="upVote($event,i)"
-        (isDownVote)="downVote($event, i)"
-
+        [quote]="quote" (isComplete)="deleteQuote($event, i)"
+        (isUpVote)="upVote($event,i)" (isDownVote)="downVote($event, i)"
       </div>
-
     </div>
   </div>
 </div>

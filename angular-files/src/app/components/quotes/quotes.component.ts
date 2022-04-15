@@ -14,7 +14,8 @@ export class QuotesComponent implements OnInit {
       'Hasnai Nalle',
       'Brian Juma',
       0,
-      0
+      0,
+      false
     ),
     new Quote(
       2,
@@ -22,7 +23,8 @@ export class QuotesComponent implements OnInit {
       'Jordan Peterson',
       'Brian Juma',
       0,
-      0
+      0,
+      false
     ),
     new Quote(
       3,
@@ -30,7 +32,8 @@ export class QuotesComponent implements OnInit {
       'Mikhaila Peterson',
       'Brian Juma',
       0,
-      0
+      0,
+      false
     ),
     new Quote(
       4,
@@ -38,25 +41,44 @@ export class QuotesComponent implements OnInit {
       'Jordan Peterson',
       'Brian Juma',
       0,
-      0
+      0,
+      false
     ),
     new Quote(
       5,
-      'You can only find out what you actually believe (rather than what you think you believe) by watching how you act. You simply don’t know what you believe, before that. You are too complex to understand yourself.',
+      'You can only find out what you actually believe (rather than what you think you believe) by watching how you act. You simply do not know what you believe, before that. You are too complex to understand yourself.',
       'Jordan Peterson',
       'Brian Juma',
       0,
-      0
+      0,
+      false
     ),
   ];
 
   // votes
   upVote(isUpVote: any, index: any) {
     this.quotes[index].upVote++;
-    //  this.loveQuote()
+    this.isMostLiked();
   }
   downVote(isDownVote: any, index: any) {
     this.quotes[index].downVote++;
+  }
+
+  //most liked quote
+  isMostLiked() {
+    let maxValue: number = Math.max.apply(
+      Math,
+      this.quotes.map(function (quote) {
+        return quote.upVote;
+      })
+    );
+    let quoteIndex: number = this.quotes.findIndex(
+      (quote) => quote.upVote === maxValue
+    );
+    this.quotes.forEach((quote) => {
+      quote.isMostLiked = false;
+    });
+    this.quotes[quoteIndex].isMostLiked = true;
   }
 
   // delete logic

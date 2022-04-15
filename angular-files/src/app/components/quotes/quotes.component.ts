@@ -18,8 +18,8 @@ export class QuotesComponent implements OnInit {
       false
     ),
     new Quote(
-      2,
-      'And if you think tough men are dangerous, wait until you see what weak men are capable of.',
+      4,
+      'If you do not say what you think then you kill your unborn self.',
       'Jordan Peterson',
       'Brian Juma',
       0,
@@ -27,17 +27,8 @@ export class QuotesComponent implements OnInit {
       false
     ),
     new Quote(
-      3,
-      'If you were not such a moron you would realize this isnt our book. You should try the diet regardless, it might help with the obvious brain fog you are experiencing',
-      'Mikhaila Peterson',
-      'Brian Juma',
-      0,
-      0,
-      false
-    ),
-    new Quote(
-      4,
-      'If you do not say what you think then you kill your unborn self.',
+      2,
+      'And if you think tough men are dangerous, wait until you see what weak men are capable of.',
       'Jordan Peterson',
       'Brian Juma',
       0,

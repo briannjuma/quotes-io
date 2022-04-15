@@ -10,6 +10,15 @@
           </cite>
         </footer>
       </blockquote>
+      <div *nglf="quote.buttons">
+        
+        [quote]="quote"
+        (isComplete)="deleteQuote($event, i)"
+        (isUpVote)="upVote($event,i)"
+        (isDownVote)="downVote($event, i)"
+
+      </div>
+
     </div>
   </div>
 </div>

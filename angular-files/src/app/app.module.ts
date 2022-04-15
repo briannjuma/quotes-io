@@ -9,6 +9,7 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
 import { MostLikedDirective } from './directives/most-liked.directive';
 import { FormComponent } from './components/form/form.component';
 import { FormsModule } from '@angular/forms';
+import { TimePassedPipe } from './pipes/timePassed/time-passed.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     ButtonsComponent,
     MostLikedDirective,
     FormComponent,
+    TimePassedPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

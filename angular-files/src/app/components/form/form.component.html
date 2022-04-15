@@ -1,0 +1,93 @@
+<form
+  id="addQuote"
+  class="border border-3 rounded m-5 p-5 bg-dark text-warning"
+  autocomplete="off"
+  (ngSubmit)="submitQuote()"
+  #quoteForm="ngForm"
+>
+  <!-- Form Title-->
+  <div class="text-center">
+    <p class="text-white display-6 fw-bold p-3">Add Quote</p>
+  </div>
+  <!-- User submitting quote-->
+  <div class="row m-2">
+    <label
+      style="font-size: larger"
+      class="col-sm-2 col-form-label col-form-label-lg"
+      for="submittedBy"
+      >Submitted By:</label
+    >
+    <div class="col-sm-10">
+      <input
+        type="text"
+        class="form-control"
+        id="submittedBy"
+        name="submittedBy"
+        required
+        [(ngModel)]="newQuote.submittedBy"
+        #submittedBy="ngModel"
+      />
+    </div>
+    <div *ngIf="submittedBy.touched && !submittedBy.valid">
+      <p class="alert alert-danger">Name is required</p>
+    </div>
+  </div>
+
+  <!-- Quote Message-->
+  <div class="row m-2">
+    <label
+      style="font-size: larger"
+      class="col-sm-2 col-form-label col-form-label-lg"
+      for="quote"
+      >Quote Message</label
+    >
+    <div class="col-sm-10">
+      <textarea
+        class="form-control"
+        id="quote"
+        rows="4"
+        required
+        name="quote"
+        [(ngModel)]="newQuote.quoteMessage"
+        #quote="ngModel"
+      ></textarea>
+    </div>
+    <div *ngIf="quote.touched && !quote.valid">
+      <p class="alert alert-danger">Name is required</p>
+    </div>
+  </div>
+
+  <!-- Quote Author-->
+  <div class="row m-2">
+    <label
+      style="font-size: larger"
+      class="col-sm-2 col-form-label col-form-label-lg"
+      for="author"
+      >Quote Author</label
+    >
+    <div class="col-sm-10">
+      <input
+        type="text"
+        class="form-control"
+        id="author"
+        name="author"
+        required
+        [(ngModel)]="newQuote.quoteAuthor"
+        #author="ngModel"
+      />
+    </div>
+    <div *ngIf="author.touched && !author.valid">
+      <p class="alert alert-danger">Name is required</p>
+    </div>
+  </div>
+  <!-- Submit button-->
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button
+      [disabled]="!quoteForm.valid"
+      type="submit"
+      class="btn btn-secondary btn-lg"
+    >
+      Add Quote
+    </button>
+  </div>
+</form>

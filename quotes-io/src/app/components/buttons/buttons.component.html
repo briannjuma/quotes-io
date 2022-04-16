@@ -1,0 +1,18 @@
+
+<div class="container m-2 d-flex justify-content-around">
+  <div>
+    <button (click)="upVote(true)" id="upvote" class="btn bg-warning btn-sm">
+      {{ quote.upVote }} Upvotes
+    </button>
+  </div>
+  <div>
+    <button (click)="downVote(true)" id="dvote" class="btn bg-info btn-sm">
+      {{ quote.downVote }} Downvotes
+    </button>
+  </div>
+  <div>
+    <button (click)="quoteDelete(true)" class="btn btn-danger btn-sm">
+      Delete Quote
+    </button>
+  </div>
+</div>
